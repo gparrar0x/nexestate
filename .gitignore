@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js
+.next/
+out/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+*.tsbuildinfo
+
+# supabase
+supabase/.temp/
