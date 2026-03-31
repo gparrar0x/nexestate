@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Image from "next/image";
 import { loginWithMagicLink } from "./actions";
 
 type LoginState = "idle" | "loading" | "sent" | "error";
@@ -36,12 +35,12 @@ export default function LoginPage() {
       >
         {/* Logo */}
         <div className="mb-8 flex justify-center" data-testid="login-logo">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/assets/logo-light.svg"
             alt="NexEstate"
             width={150}
             height={34}
-            priority
           />
         </div>
 

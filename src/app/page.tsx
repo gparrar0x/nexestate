@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -8,13 +7,11 @@ export default function HomePage() {
       data-testid="home-page"
     >
       {/* Hero background */}
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src="/assets/hero.jpg"
         alt=""
-        fill
-        className="object-cover"
-        priority
-        quality={85}
+        className="absolute inset-0 h-full w-full object-cover"
       />
 
       {/* Overlay */}
@@ -27,12 +24,12 @@ export default function HomePage() {
       >
         {/* Logo */}
         <div data-testid="home-logo">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/assets/logo-dark.svg"
             alt="NexEstate"
             width={180}
             height={40}
-            priority
           />
         </div>
 
