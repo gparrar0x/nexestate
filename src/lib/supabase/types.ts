@@ -90,6 +90,86 @@ export type Database = {
           },
         ]
       }
+      properties: {
+        Row: {
+          id: string
+          org_id: string
+          tokko_id: number | null
+          title: string
+          address: string
+          description: string
+          property_type: string
+          operation_type: string
+          price: number | null
+          currency: string | null
+          surface_total: number | null
+          surface_covered: number | null
+          bedrooms: number | null
+          bathrooms: number | null
+          photos: Json
+          geo_lat: number | null
+          geo_long: number | null
+          status: string
+          tokko_data: Json
+          synced_at: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          org_id: string
+          tokko_id?: number | null
+          title?: string
+          address?: string
+          description?: string
+          property_type?: string
+          operation_type?: string
+          price?: number | null
+          currency?: string | null
+          surface_total?: number | null
+          surface_covered?: number | null
+          bedrooms?: number | null
+          bathrooms?: number | null
+          photos?: Json
+          geo_lat?: number | null
+          geo_long?: number | null
+          status?: string
+          tokko_data?: Json
+          synced_at?: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          org_id?: string
+          tokko_id?: number | null
+          title?: string
+          address?: string
+          description?: string
+          property_type?: string
+          operation_type?: string
+          price?: number | null
+          currency?: string | null
+          surface_total?: number | null
+          surface_covered?: number | null
+          bedrooms?: number | null
+          bathrooms?: number | null
+          photos?: Json
+          geo_lat?: number | null
+          geo_long?: number | null
+          status?: string
+          tokko_data?: Json
+          synced_at?: string
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "properties_org_id_fkey"
+            columns: ["org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       organizations: {
         Row: {
           created_at: string
@@ -150,3 +230,7 @@ export type MemberUpdate = Tables['members']['Update']
 export type CrmConnectionRow = Tables['crm_connections']['Row']
 export type CrmConnectionInsert = Tables['crm_connections']['Insert']
 export type CrmConnectionUpdate = Tables['crm_connections']['Update']
+
+export type PropertyRow = Tables['properties']['Row']
+export type PropertyInsert = Tables['properties']['Insert']
+export type PropertyUpdate = Tables['properties']['Update']
